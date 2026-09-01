@@ -1,0 +1,31 @@
+{
+    "name": "Order Service - Java 21",
+
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "workspaceFolder": "/workspace",
+
+    "forwardPorts": [
+        8080
+    ],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-spring-boot",
+                "vscjava.vscode-spring-initializr"
+            ],
+            "settings": {
+                "java.jdt.ls.java.home": "/opt/java/openjdk"
+            }
+        }
+    },
+
+    "postCreateCommand": "mvn dependency:go-offline",
+
+    "remoteUser": "root"
+}
